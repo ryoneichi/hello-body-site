@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="description" content="HELLO BODYのプライバシーポリシー">
+  <title>プライバシーポリシー | HELLO BODY</title>
+  <link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+  <header class="site-header"><nav class="nav" aria-label="メインナビゲーション"><a class="brand" href="/">HELLO BODY</a><div class="nav-links"><a href="/support/">Support</a><a href="/terms/">利用規約</a></div></nav></header>
+  <main class="legal">
+    <div class="eyebrow">LEGAL</div>
+    <h1>プライバシーポリシー</h1>
+    <p class="meta">制定日: {{EFFECTIVE_DATE}} / 運営者: HELLO BODY運営</p>
+    <p>HELLO BODY運営（以下「運営者」）は、トレーニング支援アプリ「HELLO BODY」（以下「本サービス」）における利用者情報を、次のとおり取り扱います。</p>
+
+    <h2>1. 取得・保存する情報</h2>
+    <ul>
+      <li>アカウント接続時のユーザー識別子、認証方法、メールアドレス</li>
+      <li>オンボーディング・診断の回答、診断結果、週間プラン</li>
+      <li>任意入力の年齢、性別、身長、体重、設定</li>
+      <li>Workout、種目、Set、重量、回数、時間、距離、難易度、痛みの申告、メモ、実施日時、端末上の日付・タイムゾーン</li>
+      <li>カスタム種目、お気に入り、保存メニュー、トレーニングラベル</li>
+      <li>公開を選んだ表示名、自己紹介、Training歴、週平均、よく行う種目、任意のBIG3・HELLO BODY TYPE、Workout名、ひとこと、種目・Set snapshot</li>
+      <li>user blockおよび投稿・user reportに必要な識別子、理由、日時（reportは通常の利用者へ公開しません）</li>
+      <li>Cloud同期用の端末UUID、revision、cursor、operation receipt、migration receipt、競合候補等</li>
+      <li>local notificationの設定、予定時刻、通知ID</li>
+    </ul>
+    <p>ログインしない利用者の記録は原則として端末内に保存されます。アカウント接続後にCloud保存を有効にした場合、対象データをSupabaseへ同期します。</p>
+
+    <h2>2. 利用目的</h2>
+    <ul>
+      <li>トレーニング計画、記録、履歴、成長表示の提供</li>
+      <li>バックアップ、機種変更、複数端末同期、障害復旧</li>
+      <li>入力に応じた診断、週間プラン、ルールベース支援</li>
+      <li>認証、本人確認、不正利用防止、同期競合の安全な処理</li>
+      <li>公開Workout feed、公開profile、メニュー再利用の提供</li>
+      <li>投稿のreport、user block、不適切な投稿への対応、障害対応と品質維持</li>
+    </ul>
+
+    <h2>3. Social機能の公開範囲</h2>
+    <p>Workoutは自動公開されません。共有previewで「公開」を選んだ場合だけ投稿を作成します。公開profile、BIG3、HELLO BODY TYPEは初期状態でOFFです。</p>
+    <p>Social用dataにはメールアドレス、年齢、性別、身長、体重、診断score・回答、Workout memo、痛みの申告を含めません。利用者は自分の投稿を削除し、投稿・userをreportし、userをblockできます。block関係にある利用者同士の公開profileと投稿は相互に表示しません。</p>
+
+    <h2>4. 外部サービス</h2>
+    <p><strong>Supabase</strong>をEmail OTP認証、Database、Edge Functions、Cloud Syncに利用します。アカウント識別子、メールアドレス、Cloud保存対象データ、同期metadataが送信され得ます。</p>
+    <p><strong>Resend</strong>をEmail OTPの配送に利用します。送信先メールアドレスと配信に必要な情報が送信され得ます。</p>
+    <p>初回リリースではOpenAI API、Googleログイン、Sign in with Apple、第三者広告SDK、tracking SDKを利用しません。</p>
+
+    <h2>5. Trackingと広告</h2>
+    <p>本サービスは、第三者広告を表示せず、IDFAを取得せず、他社のAppやWebサイトを横断するtrackingを行いません。App Tracking Transparencyの許可を要求しません。</p>
+
+    <h2>6. 保存期間</h2>
+    <p>利用中の情報は機能提供に必要な期間保存します。アカウント削除時は、法令上保持が必要な場合を除き、そのアカウントに紐づくCloudデータと対象端末データを削除します。Supabase・Resendのservice logやbackupの具体的保持期間は、各提供者の契約・設定に従います。</p>
+
+    <h2>7. アカウント・データの削除</h2>
+    <p>アカウント接続済みの利用者は、アプリの「マイページ → HELLO BODYアカウント → アカウントを削除」から削除できます。Cloud削除に失敗した場合は端末データとsessionを先に消さず、再試行できる状態を維持します。ログインせず利用している端末内データについては、Support窓口へお問い合わせください。</p>
+
+    <h2>8. 安全管理</h2>
+    <p>Cloud dataへのアクセス制御、暗号化通信、認証済みserver処理、offline-firstの同期整合性、secretのserver-side保管等、必要な安全管理措置を講じます。</p>
+
+    <h2>9. 未成年者</h2>
+    <p>本サービスは13歳未満の方による利用を想定しておらず、13歳未満の方は利用できません。13歳以上18歳未満の方は、保護者または法定代理人の同意を得た上で利用してください。</p>
+
+    <h2>10. 改定</h2>
+    <p>機能や法令の変更に応じて本ポリシーを改定する場合があります。重要な変更は本ページまたはアプリ内で案内します。</p>
+
+    <h2>11. お問い合わせ</h2>
+    <p>運営者: HELLO BODY運営<br>問い合わせ先: <a href="mailto:hellobody.support@gmail.com">hellobody.support@gmail.com</a></p>
+    <p>個人情報取扱事業者の氏名および住所については、ご本人からの求めに応じて遅滞なく開示します。開示をご希望の場合は <a href="mailto:hellobody.support@gmail.com">hellobody.support@gmail.com</a> までお問い合わせください。</p>
+
+    <p class="note">施行日は実際のWeb公開日に設定してください。公開前に最終法務確認を行い、この注記とnoindex指定を外してください。</p>
+  </main>
+  <footer class="site-footer"><div class="footer-row"><span>HELLO BODY</span><div class="footer-links"><a href="/">トップ</a><a href="/support/">Support</a><a href="/terms/">利用規約</a></div></div></footer>
+</body>
+</html>

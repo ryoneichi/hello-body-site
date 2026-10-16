@@ -1,0 +1,193 @@
+:root {
+  color-scheme: light;
+  --paper: #f7f8fc;
+  --surface: rgba(255, 255, 255, 0.84);
+  --ink: #151821;
+  --muted: #626b7e;
+  --line: rgba(47, 67, 115, 0.16);
+  --blue: #315cff;
+  --violet: #655cff;
+  --soft-blue: #eaf0ff;
+  --radius: 28px;
+  font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont,
+    "Hiragino Sans", "Yu Gothic", sans-serif;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at 12% 4%, rgba(167, 184, 255, .25), transparent 28rem),
+    radial-gradient(circle at 88% 8%, rgba(101, 92, 255, .12), transparent 24rem),
+    var(--paper);
+  color: var(--ink);
+  line-height: 1.75;
+}
+a { color: inherit; text-decoration-color: rgba(49, 92, 255, .45); }
+a:hover { text-decoration-color: var(--blue); }
+img { max-width: 100%; }
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-bottom: 1px solid var(--line);
+  background: rgba(247, 248, 252, .88);
+  backdrop-filter: blur(16px);
+}
+.nav {
+  max-width: 1120px;
+  min-height: 66px;
+  margin: auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+.brand {
+  font-size: .92rem;
+  font-weight: 760;
+  letter-spacing: .13em;
+  text-decoration: none;
+}
+.nav-links { display: flex; align-items: center; gap: 20px; }
+.nav-links a { color: var(--muted); font-size: .85rem; text-decoration: none; }
+
+.page, .legal { width: min(1120px, calc(100% - 40px)); margin: auto; }
+.hero {
+  min-height: 670px;
+  padding: 96px 0 72px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(320px, .95fr);
+  align-items: center;
+  gap: clamp(44px, 8vw, 110px);
+}
+.eyebrow { color: var(--blue); font-weight: 730; letter-spacing: .14em; font-size: .78rem; }
+h1, h2, h3 { line-height: 1.18; letter-spacing: -.035em; }
+h1 { margin: 16px 0 20px; font-size: clamp(3rem, 8vw, 6.8rem); }
+.hero-copy { max-width: 34rem; color: var(--muted); font-size: clamp(1.05rem, 2vw, 1.25rem); }
+.hero-links { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 20px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  text-decoration: none;
+  font-weight: 680;
+}
+.button.primary { color: #fff; border-color: transparent; background: linear-gradient(135deg, var(--blue), var(--violet)); }
+
+.door-stage {
+  position: relative;
+  min-height: 440px;
+  border-radius: 48px;
+  overflow: hidden;
+  background: linear-gradient(150deg, #fff 10%, #eef2ff 56%, #ddd9ff);
+  box-shadow: 0 32px 80px rgba(40, 53, 102, .15);
+}
+.door-stage::before, .door-stage::after {
+  content: "";
+  position: absolute;
+  top: 76px;
+  width: 34%;
+  height: 58%;
+  filter: drop-shadow(0 20px 24px rgba(49, 92, 255, .2));
+}
+.door-stage::before {
+  left: 13%;
+  border-radius: 22px 8px 8px 22px;
+  background: linear-gradient(135deg, #1768ff, #83adff);
+  clip-path: polygon(0 0, 100% 17%, 100% 82%, 0 100%);
+}
+.door-stage::after {
+  right: 13%;
+  border-radius: 8px 22px 22px 8px;
+  background: linear-gradient(135deg, #7b5cff, #4b2eea);
+  clip-path: polygon(0 17%, 100% 0, 100% 100%, 0 82%);
+}
+.door-light {
+  position: absolute;
+  inset: 42% 34% auto;
+  height: 18px;
+  border-radius: 999px;
+  background: var(--violet);
+  box-shadow: 0 0 28px rgba(101, 92, 255, .6);
+}
+.door-floor {
+  position: absolute;
+  left: 22%; right: 22%; bottom: -8%; height: 42%;
+  background: linear-gradient(to bottom, rgba(255,255,255,.96), rgba(124,145,255,.08));
+  clip-path: polygon(36% 0, 64% 0, 100% 100%, 0 100%);
+}
+.door-caption { position: absolute; left: 30px; bottom: 24px; color: #536078; font-size: .78rem; letter-spacing: .13em; }
+
+.section { padding: 94px 0; }
+.section-heading { max-width: 650px; margin-bottom: 42px; }
+.section h2 { margin: 10px 0 14px; font-size: clamp(2rem, 4.5vw, 3.7rem); }
+.section-heading p { color: var(--muted); }
+.feature-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.feature {
+  min-height: 250px;
+  padding: clamp(24px, 4vw, 38px);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: 0 16px 44px rgba(37, 51, 94, .06);
+}
+.feature-number { color: var(--blue); font: 700 .78rem/1 ui-monospace, SFMono-Regular, Menlo, monospace; }
+.feature h3 { margin: 38px 0 12px; font-size: 1.45rem; }
+.feature p { margin: 0; color: var(--muted); }
+.privacy-card {
+  padding: clamp(28px, 5vw, 58px);
+  border-radius: 36px;
+  color: #fff;
+  background: #181b25;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: end;
+  gap: 28px;
+}
+.privacy-card h2 { margin: 0 0 14px; }
+.privacy-card p { color: #bbc1d1; max-width: 660px; }
+.privacy-card .button { background: #fff; color: #181b25; }
+
+.legal { max-width: 780px; padding: 72px 0 100px; }
+.legal h1 { font-size: clamp(2.5rem, 8vw, 4.6rem); }
+.legal h2 { margin-top: 52px; font-size: 1.35rem; }
+.legal h3 { margin-top: 30px; font-size: 1.05rem; }
+.legal p, .legal li { color: #343b4b; }
+.meta, .note { color: var(--muted) !important; }
+.note { border-left: 3px solid var(--blue); padding: 4px 0 4px 18px; }
+.legal details { margin: 12px 0; padding: 18px 20px; border: 1px solid var(--line); border-radius: 18px; background: var(--surface); }
+.legal summary { cursor: pointer; font-weight: 690; }
+.legal table { width: 100%; border-collapse: collapse; }
+.legal th, .legal td { padding: 12px; text-align: left; border-bottom: 1px solid var(--line); vertical-align: top; }
+
+.site-footer {
+  margin-top: 80px;
+  padding: 34px 0 48px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: .85rem;
+}
+.footer-row { max-width: 1120px; margin: auto; padding: 0 24px; display: flex; justify-content: space-between; gap: 28px; }
+.footer-links { display: flex; flex-wrap: wrap; gap: 16px; }
+
+@media (max-width: 760px) {
+  .nav-links a:not(:last-child) { display: none; }
+  .hero { min-height: auto; padding-top: 68px; grid-template-columns: 1fr; }
+  .door-stage { min-height: 350px; }
+  .feature-grid { grid-template-columns: 1fr; }
+  .privacy-card { grid-template-columns: 1fr; align-items: start; }
+  .footer-row { flex-direction: column; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
